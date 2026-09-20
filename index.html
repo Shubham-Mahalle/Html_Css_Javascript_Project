@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Student Task Portal</h1>
+            <nav id="userNav" class="hidden">
+                <a href="#profile" id="profileLink">My Profile</a>
+                <button id="logoutButton" type="button">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="authSection" class="auth-area">
+            <div class="auth-card">
+                <div class="tabs">
+                    <button id="showLogin" class="tab-button active" type="button">Login</button>
+                    <button id="showSignup" class="tab-button" type="button">Sign Up</button>
+                </div>
+
+                <form id="loginForm">
+                    <h2>Welcome back</h2>
+                    <div class="form-group"><label for="loginEmail">Email</label><input type="email" id="loginEmail" placeholder="example@email.com" required></div>
+                    <div class="form-group"><label for="loginPassword">Password</label><input type="password" id="loginPassword" placeholder="Enter your password" required></div>
+                    <p id="loginMessage" class="message"></p>
+                    <button class="main-button" type="submit">Login</button>
+                </form>
+
+                <form id="signupForm" class="hidden">
+                    <h2>Student Sign Up</h2>
+                    <div class="form-group"><label for="studentName">Student Name</label><input type="text" id="studentName" placeholder="Enter your name" required></div>
+                    <div class="form-group"><label for="signupEmail">Email</label><input type="email" id="signupEmail" placeholder="example@email.com" required></div>
+                    <div class="form-group"><label for="signupPassword">Password</label><input type="password" id="signupPassword" placeholder="Choose a password" minlength="4" required></div>
+                    <div class="form-group"><label for="age">Age</label><input type="number" id="age" min="1" placeholder="Enter your age" required></div>
+                    <div class="form-group"><label for="course">Course</label><select id="course" required><option value="">Choose a course</option><option>Computer Science</option><option>B.Tech</option><option>BCA</option><option>BBA</option></select></div>
+                    <fieldset class="form-group"><legend>Gender</legend><div class="choice-row"><label><input type="radio" name="gender" value="Male" required> Male</label><label><input type="radio" name="gender" value="Female"> Female</label><label><input type="radio" name="gender" value="Other"> Other</label></div></fieldset>
+                    <fieldset class="form-group"><legend>Skills</legend><div class="choice-row"><label><input type="checkbox" name="skills" value="HTML"> HTML</label><label><input type="checkbox" name="skills" value="CSS"> CSS</label><label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label></div></fieldset>
+                    <p id="signupMessage" class="message"></p>
+                    <button class="main-button" type="submit">Create Student Account</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="portalSection" class="hidden">
+            <div class="portal-heading">
+                <div><p class="tag">YOUR WORKSPACE</p><h2 id="welcomeName">Welcome to your tasks!</h2></div>
+            </div>
+
+            <section id="profile" class="card profile-card hidden">
+                <div class="section-title"><h2>My Student Profile</h2><button id="closeProfileButton" class="text-button" type="button">Close</button></div>
+                <div id="profileDetails" class="profile-panel"></div>
+            </section>
+
+            <section id="tasks" class="card tasks-card">
+                <div class="section-title"><div><h2>Task Manager</h2><p>Add small study goals and mark them when done.</p></div><span id="taskCount" class="count">0 tasks</span></div>
+                <div class="task-input-row"><input type="text" id="taskInput" placeholder="What do you need to work on?"><button id="addTaskButton" class="main-button" type="button">Add Task</button></div>
+                <p id="taskMessage" class="message"></p>
+                <ul id="taskList"></ul>
+            </section>
+        </section>
+    </main>
+
+    <div id="editBox" class="edit-box hidden">
+        <form id="editTaskForm" class="card edit-card">
+            <h2>Edit Task</h2>
+            <label for="editTaskInput">Task name</label>
+            <input type="text" id="editTaskInput" required>
+            <div class="edit-actions">
+                <button id="cancelEditButton" class="outline-button" type="button">Cancel</button>
+                <button class="main-button" type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <footer><p>Student Task Portal - Practice Project</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
