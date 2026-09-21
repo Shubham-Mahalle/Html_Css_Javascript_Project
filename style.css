@@ -53,8 +53,13 @@ legend {
     font-weight: bold;
 }
 
-small { color: #647680; }
-.hidden { display: none !important; }
+small { 
+    color: #647680;
+ }
+
+.hidden { 
+    display: none !important; 
+}
 
 header {
     padding: 18px 20px;
